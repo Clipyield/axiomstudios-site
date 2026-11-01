@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AXIOM.studios</title>
+<meta name="description" content="AXIOM.studios, Salzburg: characters, cinematics and playable game material in Unreal Engine 5.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;700&family=Cormorant:ital,wght@1,500&family=Figtree:wght@400;500;600&display=swap">
+<style>
+body{margin:0}img{max-width:100%}
+/* Layout: one dark scroll like a game's title screen: full-bleed key art, then plain sections on ash-black with a cold soul-blue accent and one ember warm note. Single dark look by choice. */
+:root{
+  --ash:#0d0f14; --ash-2:#151821; --line:#262b38;
+  --bone:#e9e4da; --mist:#a7adbb;
+  --soul:#8fbcff; --ember:#e08a4c;
+  --display:"Cormorant SC","Cormorant Garamond",Georgia,serif;
+  --italic:"Cormorant",Georgia,serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--ash);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--soul)}
+a:focus-visible{outline:2px solid var(--soul);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--soul)}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.02em;text-wrap:balance;margin:0;line-height:1.05}
+h2{font-size:clamp(34px,5vw,56px)}
+h3{font-size:26px}
+p{margin:0}
+.lede{color:var(--mist);max-width:60ch}
+
+/* nav */
+nav{position:absolute;inset:0 0 auto;z-index:2}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:22px}
+.mark{font-family:var(--display);font-size:24px;letter-spacing:.06em;color:var(--bone);text-decoration:none}
+.mark span{color:var(--soul)}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--bone);text-decoration:none;font-size:14px;letter-spacing:.06em;opacity:.85}
+nav ul a:hover{opacity:1;color:var(--soul)}
+@media (max-width:640px){nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,15,20,.55) 0%,rgba(13,15,20,0) 30%,rgba(13,15,20,.35) 55%,var(--ash) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:0 72px;width:100%}
+.hero h1{font-size:clamp(52px,10vw,124px);line-height:.92;letter-spacing:.03em}
+.hero h1 span{color:var(--soul)}
+.hero .tag{font-family:var(--italic);font-style:italic;font-size:clamp(22px,2.6vw,30px);color:var(--bone);max-width:30ch;margin-top:18px;line-height:1.3}
+.hero .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
+.btn{display:inline-block;padding:13px 26px;border:1px solid var(--soul);color:var(--ash);background:var(--soul);text-decoration:none;font-weight:600;letter-spacing:.04em;font-size:15px}
+.btn.ghost{background:transparent;color:var(--bone);border-color:rgba(233,228,218,.4)}
+.btn:hover{filter:brightness(1.08)}
+
+section{padding-block:96px}
+.head{display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.services article{background:var(--ash);padding:34px 30px;display:flex;flex-direction:column;gap:12px}
+.services p{color:var(--mist)}
+@media (max-width:820px){.services{grid-template-columns:1fr}}
+
+/* showcase */
+.showcase{background:var(--ash-2)}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.split img{width:100%;height:auto;display:block}
+.facts{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.facts b{font-weight:500;color:var(--bone)}
+.facts span{color:var(--mist);text-align:right}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
+.gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:64px}
+.gallery figure{margin:0;position:relative;overflow:hidden;background:var(--ash)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gallery figure:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;font-size:13px;letter-spacing:.04em;color:var(--bone);background:linear-gradient(transparent,rgba(13,15,20,.85))}
+.g-a{grid-column:span 7;aspect-ratio:16/9}
+.g-b{grid-column:span 5;aspect-ratio:auto}
+.g-c{grid-column:span 6;aspect-ratio:16/9}
+.g-d{grid-column:span 6;aspect-ratio:16/9}
+@media (max-width:700px){.g-a,.g-b,.g-c,.g-d{grid-column:span 12}.g-b{aspect-ratio:16/10}}
+
+/* craft */
+.sheet{background:#1b1e26;border:1px solid var(--line);padding:10px}
+.sheet img{display:block;width:100%;height:auto}
+.craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
+.craft-grid figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.craft-grid figcaption,.cap{font-size:13.5px;color:var(--mist);letter-spacing:.02em}
+@media (max-width:760px){.craft-grid{grid-template-columns:1fr}}
+
+/* playable */
+.play{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.play ul{margin:22px 0 0;padding-left:18px;color:var(--mist);display:grid;gap:6px}
+.play ul li::marker{color:var(--ember)}
+.status{display:inline-block;margin-top:22px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);border:1px solid rgba(224,138,76,.5);padding:6px 12px}
+@media (max-width:860px){.play{grid-template-columns:1fr;gap:28px}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--soul);padding-top:18px}
+.steps li::before{content:"0" counter(s);font-family:var(--display);font-size:36px;color:var(--soul);line-height:1}
+.steps p{color:var(--mist)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
+.why div{display:flex;flex-direction:column;gap:8px}
+.why p{color:var(--mist)}
+@media (max-width:700px){.why{grid-template-columns:1fr}}
+
+/* contact */
+.contact{position:relative;overflow:hidden;padding-block:120px}
+.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
+.contact .wrap{position:relative}
+.contact h2{font-size:clamp(40px,6vw,72px)}
+.card{margin-top:34px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;background:rgba(13,15,20,.82);border:1px solid var(--line);padding:26px 28px}
+.card dt{color:var(--mist);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.card dd{margin:0;font-size:18px;user-select:all;overflow-wrap:anywhere}
+.card dd.plain{user-select:text}
+@media (max-width:480px){.card{grid-template-columns:1fr;gap:2px}.card dd{margin-bottom:12px}}
+
+footer{border-top:1px solid var(--line);padding-block:44px 56px;color:var(--mist);font-size:13.5px}
+footer .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:32px}
+footer h4{font-family:var(--body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone);margin:0 0 10px}
+footer p{line-height:1.7}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">AXIOM<span>.</span>studios</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#veyrmoor">Showcase</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/hero-ozhar.jpg" alt="Ozhar, the Soul-Eater King, from the VEYRMOOR trailer">
+  <div class="wrap">
+    <p class="eyebrow">Animation · Cinematics · Games · Salzburg</p>
+    <h1>AXIOM<span>.</span>studios</h1>
+    <p class="tag">Characters, cinematics and playable game material in Unreal Engine 5, built to an AAA standard.</p>
+    <div class="row">
+      <a class="btn" href="#contact">Ask for a demo</a>
+      <a class="btn ghost" href="#veyrmoor">See VEYRMOOR</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="work">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What we make</p>
+      <h2>Everything a game needs to be seen</h2>
+    </div>
+    <div class="services">
+      <article>
+        <h3>Characters</h3>
+        <p>From turnaround sheets to rigged, playable UE5 models. Every lead stays on-model across key art, cutscene and gameplay.</p>
+      </article>
+      <article>
+        <h3>Cinematics &amp; trailers</h3>
+        <p>Announce trailers and cutscenes with voice, score and dubs, delivered in every format your channels need.</p>
+      </article>
+      <article>
+        <h3>Key art &amp; pitch</h3>
+        <p>Posters, store capsules and the visual pitch package that gets a project funded, signed or wishlisted.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="showcase" id="veyrmoor">
+  <div class="wrap">
+    <div class="split">
+      <img src="img/duel.jpg" alt="Ardin facing Ozhar in the VEYRMOOR trailer" loading="lazy">
+      <div>
+        <p class="eyebrow">Showcase · Original IP</p>
+        <h2 style="margin-top:14px">VEYRMOOR</h2>
+        <p class="lede" style="margin-top:18px">A dark-fantasy world built in our studio: the exiled guard Ardin against Ozhar, the king who ate his kingdom's souls.</p>
+        <ul class="facts">
+          <li><b>Cinematic trailer</b><span>2:49 · 44 shots</span></li>
+          <li><b>Voice &amp; music</b><span>11 voiced lines · original score</span></li>
+          <li><b>Languages</b><span>English original · German dub, same voices</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure class="g-a"><img src="img/ardin-blade.jpg" alt="Ardin's soul blade" loading="lazy"><figcaption>Ardin · Oathblade</figcaption></figure>
+      <figure class="g-b"><img src="img/poster.jpg" alt="VEYRMOOR key art poster" loading="lazy" style="object-position:50% 20%"><figcaption>Key art · Ozhar</figcaption></figure>
+      <figure class="g-c"><img src="img/clash.jpg" alt="Ardin and Ozhar clash" loading="lazy"><figcaption>Trailer still · The clash</figcaption></figure>
+      <figure class="g-d"><img src="img/army.jpg" alt="The hollowed army under the moon" loading="lazy"><figcaption>Trailer still · The hollowed army</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="craft">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Dev process · Character design</p>
+      <h2>On-model from sheet to screen</h2>
+      <p class="lede">Turnarounds and expressions for every lead, so each character looks the same in key art, cutscene and game.</p>
+    </div>
+    <figure class="sheet" style="margin:0"><img src="img/ardin-turnaround.jpg" alt="Ardin, 360 degree turnaround sheet" loading="lazy"></figure>
+    <p class="cap" style="margin-top:10px">Ardin · 360° turnaround</p>
+    <div class="craft-grid">
+      <figure><div class="sheet"><img src="img/ardin-expressions.jpg" alt="Ardin expression sheet" loading="lazy"></div><figcaption>Ardin · expression sheet</figcaption></figure>
+      <figure><div class="sheet"><img src="img/nulldrei-turnaround.jpg" alt="Nulldrei turnaround sheet" loading="lazy"></div><figcaption>Nulldrei · turnaround, from our second IP <i>Nulldrei vs Velmaron</i></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="showcase" id="playable">
+  <div class="wrap play">
+    <div>
+      <p class="eyebrow">Playable · Unreal Engine 5</p>
+      <h2 style="margin-top:14px">VEYRMOOR: Duskfall</h2>
+      <p class="lede" style="margin-top:18px">A souls-like vertical slice in Unreal Engine 5, running natively on Android with a gamepad.</p>
+      <ul>
+        <li>Hero brought from sheet to rigged UE5 character</li>
+        <li>Combat: lock-on, stamina, block and parry</li>
+        <li>Boss fight with Ozhar</li>
+      </ul>
+      <span class="status">Boss fight in development</span>
+    </div>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
+      <div class="sheet"><img src="img/ardin-abilities.jpg" alt="Ardin abilities sheet: Oathblade, Ash Step, Ember of the Fallen" loading="lazy"></div>
+      <figcaption class="cap">Ardin · abilities sheet, the basis for the moveset</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">How we work</p>
+      <h2>Four steps, your sign-off at each one</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Brief</h3><p>Your world, your style references, one call.</p></li>
+      <li><h3>Look test</h3><p>Character sheets and a style frame within days.</p></li>
+      <li><h3>Production</h3><p>Weekly reviews; every shot checked before you see it.</p></li>
+      <li><h3>Delivery</h3><p>UE5 project files, masters, and full rights to you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="showcase" id="why">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Why AXIOM</p>
+      <h2>AAA ambition, studio-sized price</h2>
+    </div>
+    <div class="why">
+      <div><h3>Cinematic quality bar</h3><p>Every frame judged against the games you play.</p></div>
+      <div><h3>Fixed prices, fast turnaround</h3><p>You know the cost before we start.</p></div>
+      <div><h3>Four languages in house</h3><p>German, English, Spanish and Turkish, for scripts and dubs.</p></div>
+      <div><h3>Close by</h3><p>Based in Salzburg; we come to you for demos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <img src="img/hero-ozhar.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <p class="eyebrow">Next step</p>
+    <h2 style="margin-top:14px">Interested? Ask us for a demo.</h2>
+    <dl class="card">
+      <dt>Contact</dt><dd class="plain">Okan Urhan, Founder &amp; Creative Director</dd>
+      <dt>Email</dt><dd>okan@axiomstudios.at</dd>
+      <dt>Phone</dt><dd>+43 690 10702616</dd>
+      <dt>Studio</dt><dd class="plain">Seekirchen am Wallersee, Salzburg, Austria</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p style="font-family:var(--display);font-size:22px;color:var(--bone);letter-spacing:.05em">AXIOM.studios</p>
+      <p>A studio of AXIOM.industries.<br>© 2026 Okan Urhan. VEYRMOOR and all characters shown are original IP of AXIOM.studios.</p>
+    </div>
+    <div>
+      <h4>Impressum</h4>
+      <p>Okan Urhan, AXIOM.industries (Einzelunternehmen)<br>
+      Salzburger Straße 22/8, 5201 Brunn (Seekirchen am Wallersee), Österreich<br>
+      E-Mail: okan@axiomstudios.at · Tel.: +43 690 10702616<br>
+      Gewerbe: Filmproduktion; Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik. Mitglied der WKO Salzburg.<br>
+      Gewerbebehörde: Bezirkshauptmannschaft Salzburg-Umgebung<br>
+      Umsatzsteuerbefreit als Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
