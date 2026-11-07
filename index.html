@@ -111,6 +111,15 @@ section{padding-block:96px}
 .status{display:inline-block;margin-top:22px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);border:1px solid rgba(224,138,76,.5);padding:6px 12px}
 @media (max-width:860px){.play{grid-template-columns:1fr;gap:28px}}
 
+/* spot */
+.spot{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:center}
+.spot video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ash-2);border:1px solid var(--line)}
+.price{display:flex;align-items:baseline;gap:12px;margin-top:26px;flex-wrap:wrap}
+.price b{font-family:var(--display);font-size:44px;color:var(--ember);line-height:1}
+.price span{color:var(--mist)}
+.spot .btn{margin-top:26px}
+@media (max-width:860px){.spot{grid-template-columns:1fr;gap:28px}.spot video{max-width:340px}}
+
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
 .steps li{counter-increment:s;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--soul);padding-top:18px}
@@ -150,6 +159,7 @@ footer p{line-height:1.7}
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#veyrmoor">Showcase</a></li>
+      <li><a href="#spot">Werbespot</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -250,6 +260,21 @@ footer p{line-height:1.7}
       <div class="sheet"><img src="img/ardin-abilities.jpg" alt="Ardin abilities sheet: Oathblade, Ash Step, Ember of the Fallen" loading="lazy"></div>
       <figcaption class="cap">Ardin · abilities sheet, the basis for the moveset</figcaption>
     </figure>
+  </div>
+</section>
+
+<section id="spot" lang="de">
+  <div class="wrap spot">
+    <video controls playsinline preload="none" poster="img/spot-poster.jpg" aria-label="Beispielspot Muster Backstube, 15 Sekunden">
+      <source src="video/muster-backstube-spot.mp4" type="video/mp4">
+    </video>
+    <div>
+      <p class="eyebrow">Beispiel · Werbespot für lokale Betriebe</p>
+      <h2 style="margin-top:14px">Muster Backstube</h2>
+      <p class="lede" style="margin-top:18px">15 Sekunden, deutsch gesprochen, fertig für Instagram, TikTok und Ihre Website. So könnte der Spot für Ihre Bäckerei, Ihr Hotel oder Ihren Hofladen aussehen.</p>
+      <div class="price"><b>€ 990</b><span>netto · Test-Spot, fixer Preis</span></div>
+      <a class="btn" href="mailto:okan@axiomstudios.at?subject=Test-Spot%20anfragen">Test-Spot anfragen</a>
+    </div>
   </div>
 </section>
 
