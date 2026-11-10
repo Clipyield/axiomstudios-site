@@ -123,7 +123,12 @@ section{padding-block:96px}
 .guide video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--ash-2);border:1px solid var(--line)}
 @media (max-width:860px){.guide{grid-template-columns:1fr;gap:28px}
 .spot{grid-template-columns:1fr;gap:28px}.spot video{max-width:340px}}
-
+.film{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);gap:28px;align-items:end}
+.film figure{margin:0;display:flex;flex-direction:column;gap:10px}
+.film video{display:block;width:100%;height:auto;background:var(--ash-2);border:1px solid var(--line)}
+.film .q video{aspect-ratio:16/9}.film .h video{aspect-ratio:9/16}
+.filmtxt{margin-top:36px;max-width:720px}.filmtxt .btn{margin-top:26px}
+@media (max-width:860px){.film{grid-template-columns:1fr}.film .h video{max-width:340px}}
 
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
@@ -166,6 +171,7 @@ footer p{line-height:1.7}
       <li><a href="#veyrmoor">Showcase</a></li>
       <li><a href="#spot">Werbespot</a></li>
       <li><a href="#guide">Produktguide</a></li>
+      <li><a href="#produktfilm">Produktfilm</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -293,6 +299,31 @@ footer p{line-height:1.7}
       <h2 style="margin-top:14px">Ihr Produkt, in 3D erklärt</h2>
       <p class="lede" style="margin-top:18px">Drehen, hineinschauen, Funktion Schritt für Schritt zeigen: Druck, Temperatur und Durchfluss live, mit Sprecher und in mehreren Sprachen. Beispiel: eine Espressomaschine. Gebaut für Hersteller, die ihr Produkt online verständlich machen wollen.</p>
       <a class="btn" href="mailto:okan@axiomstudios.at?subject=Produktguide%20anfragen">Produktguide anfragen</a>
+    </div>
+  </div>
+</section>
+
+<section id="produktfilm" lang="de">
+  <div class="wrap">
+    <div class="film">
+      <figure class="q">
+        <video controls playsinline preload="none" poster="img/waermepumpe-poster-quer.jpg" aria-label="Produktspot Wärmepumpe LW-8, Querformat, 30 Sekunden">
+          <source src="video/waermepumpe-spot-quer.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">Querformat 16:9 für Website, Messe und YouTube</figcaption>
+      </figure>
+      <figure class="h">
+        <video controls playsinline preload="none" poster="img/waermepumpe-poster-hoch.jpg" aria-label="Produktspot Wärmepumpe LW-8, Hochformat, 30 Sekunden">
+          <source src="video/waermepumpe-spot-hoch.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap">Hochformat 9:16 für LinkedIn, Instagram und TikTok</figcaption>
+      </figure>
+    </div>
+    <div class="filmtxt">
+      <p class="eyebrow">Beispiel · Produktfilm für Hersteller</p>
+      <h2 style="margin-top:14px">Wärmepumpe LW-8: 30 Sekunden, ein Produkt, alles erklärt</h2>
+      <p class="lede" style="margin-top:18px">Vom Gerät im Schnee durch das Lüftergitter ins Innere: Explosionsansicht, Teileliste, Abtauung, Platine, Verdichter und Fehlersuche. Deutsch gesprochen, mit Musik und Untertiteln, in Hoch- und Querformat. So macht sich ein erklärungsbedürftiges Produkt in einem Film und einem interaktiven 3D-Guide verständlich.</p>
+      <a class="btn" href="mailto:okan@axiomstudios.at?subject=Produktfilm%20anfragen">Produktfilm anfragen</a>
     </div>
   </div>
 </section>
