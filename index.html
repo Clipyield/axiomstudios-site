@@ -125,10 +125,11 @@ section{padding-block:96px}
 .spot{grid-template-columns:1fr;gap:28px}.spot video{max-width:340px}}
 .demo{display:grid;gap:28px}
 .demo .frame{position:relative;width:100%;aspect-ratio:16/9;background:var(--ash-2);border:1px solid var(--line);overflow:hidden}
-.demo iframe{position:absolute;left:0;top:0;width:1280px;height:720px;border:0;transform-origin:0 0}
-.demo .start{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:url(img/produktguide-poster.jpg) center/cover;cursor:pointer;border:0;color:var(--bone);font:inherit}
+.demo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.demo .start{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:url(img/waermepumpe-demo-poster.jpg) center/cover;cursor:pointer;border:0;color:var(--bone);font:inherit}
 .demo .start span{background:var(--soul);color:var(--ash);padding:13px 26px;font-weight:600;letter-spacing:.04em;font-size:15px}
-.demotxt{max-width:720px}.demotxt .btn{margin-top:26px;margin-right:12px}
+.demotxt{max-width:720px}
+@media (max-width:860px){.demo .frame{aspect-ratio:9/15}}.demotxt .btn{margin-top:26px;margin-right:12px}
 .film{max-width:880px}
 .film figure{margin:0;display:flex;flex-direction:column;gap:10px}
 .film video{display:block;width:100%;height:auto;background:var(--ash-2);border:1px solid var(--line)}
@@ -316,9 +317,9 @@ footer p{line-height:1.7}
     </div>
     <div class="demotxt">
       <p class="eyebrow">Live-Demo · Interaktiver 3D-Erklärer</p>
-      <h2 style="margin-top:14px">Selbst ausprobieren: Espressomaschine in 3D</h2>
-      <p class="lede" style="margin-top:18px">Abspielen, den Ablauf zurückspulen, Baugruppen einzeln hervorheben, Explosionsansicht, Strömung und Beschriftungen ein- und ausblenden. Dieselbe Technik bauen wir für Ihr Produkt. Fiktive Beispielmaschine, die Bedienung ist englisch.</p>
-      <a class="btn" href="demo/espresso/" target="_blank" rel="noopener">Im Vollbild öffnen</a>
+      <h2 style="margin-top:14px">Selbst ausprobieren: Wärmepumpe LW-8 in 3D</h2>
+      <p class="lede" style="margin-top:18px">Drehen, zoomen, Explosionsansicht aufziehen, Bauteile antippen und die geführte Tour mit Sprecher starten. Dazu Simulation mit Abtauung, Teileliste, Platinenplan und ein kurzes Quiz, auf Deutsch und Englisch. Dieselbe Technik bauen wir für Ihr Produkt. Fiktives Beispielprodukt.</p>
+      <a class="btn" href="demo/waermepumpe/" target="_blank" rel="noopener">Im Vollbild öffnen</a>
       <a class="btn ghost" href="mailto:okan@axiomstudios.at?subject=Interaktive%203D-Demo%20f%C3%BCr%20mein%20Produkt">Demo für mein Produkt anfragen</a>
     </div>
   </div>
@@ -408,7 +409,7 @@ footer p{line-height:1.7}
   </div>
 </footer>
 <script>
-(function(){var b=document.getElementById('demostart');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/espresso/';f.title='Interaktive 3D-Demo Espressomaschine';f.setAttribute('allowfullscreen','');var w=document.getElementById('demoframe');function fit(){f.style.transform='scale('+(w.clientWidth/1280)+')'}w.replaceChildren(f);fit();addEventListener('resize',fit)})})();
+(function(){var b=document.getElementById('demostart');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/waermepumpe/';f.title='Interaktive 3D-Demo Wärmepumpe LW-8';f.setAttribute('allowfullscreen','');document.getElementById('demoframe').replaceChildren(f)})})();
 </script>
 </body>
 </html>
