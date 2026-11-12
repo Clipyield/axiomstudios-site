@@ -133,6 +133,15 @@ section{padding-block:96px}
 .film .q video{aspect-ratio:16/9}
 .filmtxt{margin-top:36px;max-width:720px}.filmtxt .btn{margin-top:26px}
 
+/* parts */
+.part{padding-block:88px 0;background:linear-gradient(180deg,var(--ash-2) 0%,var(--ash) 100%);border-top:1px solid var(--line)}
+.part .head{margin-bottom:0}
+.part .num{font-family:var(--display);font-size:20px;letter-spacing:.2em;color:var(--ember)}
+.part+section,.part+.showcase{padding-top:56px}
+.warden{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center}
+.warden video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--ash-2);border:1px solid var(--line)}
+@media (max-width:860px){.warden{grid-template-columns:1fr;gap:28px}}
+
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
 .steps li{counter-increment:s;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--soul);padding-top:18px}
@@ -170,11 +179,8 @@ footer p{line-height:1.7}
   <div class="wrap">
     <a class="mark" href="#top">AXIOM<span>.</span>studios</a>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#veyrmoor">Showcase</a></li>
-      <li><a href="#spot">Werbespot</a></li>
-      <li><a href="#demo">Live-Demo</a></li>
-      <li><a href="#produktfilm">Produktfilm</a></li>
+      <li><a href="#part-veyrmoor">VEYRMOOR</a></li>
+      <li><a href="#kunden">Client projects</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -189,7 +195,8 @@ footer p{line-height:1.7}
     <p class="tag">Characters, cinematics and playable game material in Unreal Engine 5, built to an AAA standard.</p>
     <div class="row">
       <a class="btn" href="#contact">Ask for a demo</a>
-      <a class="btn ghost" href="#veyrmoor">See VEYRMOOR</a>
+      <a class="btn ghost" href="#part-veyrmoor">See VEYRMOOR</a>
+      <a class="btn ghost" href="#kunden">Client projects</a>
     </div>
   </div>
 </header>
@@ -215,6 +222,15 @@ footer p{line-height:1.7}
         <p>Posters, store capsules and the visual pitch package that gets a project funded, signed or wishlisted.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="part" id="part-veyrmoor">
+  <div class="wrap head">
+    <p class="num">Part 1</p>
+    <p class="eyebrow">Our own game</p>
+    <h2>VEYRMOOR: Duskfall</h2>
+    <p class="lede">Our original dark-fantasy IP: trailer, characters and the playable Unreal Engine 5 vertical slice, all built in the studio.</p>
   </div>
 </section>
 
@@ -275,6 +291,28 @@ footer p{line-height:1.7}
       <div class="sheet"><img src="img/ardin-abilities.jpg" alt="Ardin abilities sheet: Oathblade, Ash Step, Ember of the Fallen" loading="lazy"></div>
       <figcaption class="cap">Ardin · abilities sheet, the basis for the moveset</figcaption>
     </figure>
+  </div>
+</section>
+
+<section id="warden">
+  <div class="wrap warden">
+    <video controls playsinline preload="none" poster="img/soul-warden-poster.jpg" aria-label="Soul Warden, Drehung, 5 Sekunden">
+      <source src="video/soul-warden-turn.mp4" type="video/mp4">
+    </video>
+    <div>
+      <p class="eyebrow">Boss · Clip</p>
+      <h2 style="margin-top:14px">Soul Warden</h2>
+      <p class="lede" style="margin-top:18px">The Warden turns and reveals himself: a boss from VEYRMOOR, 5 seconds, straight from our character pipeline.</p>
+    </div>
+  </div>
+</section>
+
+<section class="part" id="kunden">
+  <div class="wrap head">
+    <p class="num">Part 2</p>
+    <p class="eyebrow">Client projects</p>
+    <h2>Kundenprojekte</h2>
+    <p class="lede">The same craft for businesses: sample projects for local companies and manufacturers, in German. Spots, product films and interactive 3D guides.</p>
   </div>
 </section>
 
