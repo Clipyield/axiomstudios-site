@@ -3,417 +3,346 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AXIOM.studios</title>
-<meta name="description" content="AXIOM.studios, Salzburg: characters, cinematics and playable game material in Unreal Engine 5.">
-<link rel="stylesheet" href="fonts.css">
+<title>AXIOM.studios · Ad films, social media, automation</title>
+<meta name="description" content="AXIOM.studios, Salzburg: ad spots, brand films and product videos for companies that think big, plus social media management and automation that keep your channels running.">
+<link rel="stylesheet" href="fonts-v2.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/hero-ozhar.jpg">
+<link rel="apple-touch-icon" href="img/og.jpg">
 <link rel="canonical" href="https://axiomstudios.at/">
-<meta name="theme-color" content="#0d0f14">
+<meta name="theme-color" content="#121110">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AXIOM.studios">
-<meta property="og:title" content="AXIOM.studios">
-<meta property="og:description" content="Characters, cinematics and playable game material in Unreal Engine 5. Salzburg, Austria.">
+<meta property="og:title" content="AXIOM.studios · Ad films, social media, automation">
+<meta property="og:description" content="Ad spots, brand films and product videos for companies that think big. Plus social media management and automation. Salzburg, Austria.">
 <meta property="og:url" content="https://axiomstudios.at/">
-<meta property="og:image" content="https://axiomstudios.at/img/hero-ozhar.jpg">
+<meta property="og:image" content="https://axiomstudios.at/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-body{margin:0}img{max-width:100%}
-/* Layout: one dark scroll like a game's title screen: full-bleed key art, then plain sections on ash-black with a cold soul-blue accent and one ember warm note. Single dark look by choice. */
 :root{
-  --ash:#0d0f14; --ash-2:#151821; --line:#262b38;
-  --bone:#e9e4da; --mist:#a7adbb;
-  --soul:#8fbcff; --ember:#e08a4c;
-  --display:"Cormorant SC","Cormorant Garamond",Georgia,serif;
-  --italic:"Cormorant",Georgia,serif;
-  --body:"Figtree","Segoe UI",system-ui,sans-serif;
-  color-scheme:dark;
+  --bg:#121110; --bg-2:#1b1a18; --bg-3:#24221f; --line:#34312c;
+  --text:#f3efe7; --mute:#a59f94; --dim:#77716a;
+  --amber:#e8a64a; --amber-2:#f4c27a; --ink:#16130e;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Space Grotesk",ui-monospace,"Segoe UI",sans-serif;
+  --pad:clamp(16px,4vw,48px);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--ash);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:var(--soul)}
-a:focus-visible{outline:2px solid var(--soul);outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.eyebrow{font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--soul)}
-h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:.02em;text-wrap:balance;margin:0;line-height:1.05}
-h2{font-size:clamp(34px,5vw,56px)}
-h3{font-size:26px}
-p{margin:0}
-.lede{color:var(--mist);max-width:60ch}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0;color:var(--amber)}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(36px,5.6vw,80px);font-weight:800;font-stretch:78%;line-height:.95;margin-top:14px}
+h3{font-size:22px;font-weight:700;line-height:1.15}
+.lede{font-size:clamp(17px,1.45vw,20px);max-width:56ch;color:var(--mute);margin:18px 0 0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:15px 22px;border-radius:999px;background:var(--amber);color:var(--ink);border:1.5px solid var(--amber);transition:background .15s,color .15s,border-color .15s}
+.btn:hover{background:var(--amber-2);border-color:var(--amber-2)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--text)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+section{padding:clamp(72px,10vw,140px) 0}
+.head{max-width:860px;margin-bottom:clamp(36px,5vw,64px)}
 
 /* nav */
-nav{position:absolute;inset:0 0 auto;z-index:2}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:22px}
-.mark{font-family:var(--display);font-size:24px;letter-spacing:.06em;color:var(--bone);text-decoration:none}
-.mark span{color:var(--soul)}
-nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-nav ul a{color:var(--bone);text-decoration:none;font-size:14px;letter-spacing:.06em;opacity:.85}
-nav ul a:hover{opacity:1;color:var(--soul)}
-@media (max-width:640px){nav ul{display:none}}
+.top{position:sticky;top:0;z-index:20;background:rgba(18,17,16,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.mark{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.06em;text-decoration:none}
+.mark span{font-weight:300;letter-spacing:0;color:var(--amber)}
+.top ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+.top li a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--mute)}
+.top li a:hover{color:var(--text)}
+.top .cta{color:var(--ink);background:var(--amber);padding:9px 14px;border-radius:999px}
+.top .cta:hover{color:var(--ink);background:var(--amber-2)}
+@media (max-width:820px){.top li:not(:last-child){display:none}}
 
 /* hero */
-.hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 30%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,15,20,.55) 0%,rgba(13,15,20,0) 30%,rgba(13,15,20,.35) 55%,var(--ash) 100%)}
-.hero .wrap{position:relative;z-index:1;padding-block:0 72px;width:100%}
-.hero h1{font-size:clamp(52px,10vw,124px);line-height:.92;letter-spacing:.03em}
-.hero h1 span{color:var(--soul)}
-.hero .tag{font-family:var(--italic);font-style:italic;font-size:clamp(22px,2.6vw,30px);color:var(--bone);max-width:30ch;margin-top:18px;line-height:1.3}
-.hero .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
-.btn{display:inline-block;padding:13px 26px;border:1px solid var(--soul);color:var(--ash);background:var(--soul);text-decoration:none;font-weight:600;letter-spacing:.04em;font-size:15px}
-.btn.ghost{background:transparent;color:var(--bone);border-color:rgba(233,228,218,.4)}
-.btn:hover{filter:brightness(1.08)}
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,110px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(232,166,74,.18),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center;position:relative}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(48px,8.4vw,128px);font-weight:900;font-stretch:72%;line-height:.88;letter-spacing:-.03em;margin-top:18px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lede{font-size:clamp(18px,1.7vw,22px);color:#cfc9be}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.trust b{color:var(--text);font-weight:500}
+.reel{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.reel .phone:nth-child(2){margin-top:56px}
+@media (max-width:900px){.reel{max-width:520px}}
 
-section{padding-block:96px}
-.head{display:flex;flex-direction:column;gap:14px;margin-bottom:48px}
+/* phone video frame */
+.phone{position:relative;border-radius:22px;overflow:hidden;background:#000;border:1px solid var(--line);aspect-ratio:9/16;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.phone video{width:100%;height:100%;object-fit:cover}
+.phone .label{position:absolute;left:10px;top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(18,17,16,.7);padding:5px 8px;border-radius:999px;pointer-events:none}
+
+/* ticker */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg-2)}
+.ticker div{display:flex;width:max-content;animation:tick 45s linear infinite}
+.ticker span{font-family:var(--display);font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:clamp(20px,2.6vw,30px);padding:14px 0;white-space:nowrap;color:var(--mute)}
+.ticker span::after{content:"●";color:var(--amber);font-size:.4em;vertical-align:.5em;padding:0 1.4em}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker div{animation:none}}
 
 /* services */
-.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.services article{background:var(--ash);padding:34px 30px;display:flex;flex-direction:column;gap:12px}
-.services p{color:var(--mist)}
-@media (max-width:820px){.services{grid-template-columns:1fr}}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:760px){.services{grid-template-columns:1fr}}
+.svc{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column}
+.svc .n{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:.1em}
+.svc h3{font-size:clamp(24px,2.4vw,32px);font-weight:800;font-stretch:85%;margin-top:28px}
+.svc p{color:var(--mute);margin:12px 0 0}
+.svc ul{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#cfc9be}
+.svc.feature{background:linear-gradient(160deg,#2a2218,var(--bg-2) 60%);border-color:#4a3b26}
 
-/* showcase */
-.showcase{background:var(--ash-2)}
-.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.split img{width:100%;height:auto;display:block}
-.facts{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
-.facts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
-.facts b{font-weight:500;color:var(--bone)}
-.facts span{color:var(--mist);text-align:right}
-@media (max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
-.gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:64px}
-.gallery figure{margin:0;position:relative;overflow:hidden;background:var(--ash)}
-.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.gallery figure:hover img{transform:scale(1.03)}
-@media (prefers-reduced-motion:reduce){.gallery img{transition:none}}
-.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 14px 10px;font-size:13px;letter-spacing:.04em;color:var(--bone);background:linear-gradient(transparent,rgba(13,15,20,.85))}
-.g-a{grid-column:span 7;aspect-ratio:16/9}
-.g-b{grid-column:span 5;aspect-ratio:auto}
-.g-c{grid-column:span 6;aspect-ratio:16/9}
-.g-d{grid-column:span 6;aspect-ratio:16/9}
-@media (max-width:700px){.g-a,.g-b,.g-c,.g-d{grid-column:span 12}.g-b{aspect-ratio:16/10}}
+/* work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+@media (max-width:980px){.work{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.work{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+.case h3{margin-top:18px;font-size:24px;font-weight:800;font-stretch:85%}
+.case .meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:8px}
+.case p{color:var(--mute);margin:10px 0 0;font-size:16px}
+.lang{display:inline-flex;gap:4px;margin-top:14px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{font:500 11px/1 var(--mono);letter-spacing:.1em;background:none;color:var(--mute);border:0;border-radius:999px;padding:7px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--text);color:var(--ink)}
 
-/* craft */
-.sheet{background:#1b1e26;border:1px solid var(--line);padding:10px}
-.sheet img{display:block;width:100%;height:auto}
-.craft-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
-.craft-grid figure{margin:0;display:flex;flex-direction:column;gap:10px}
-.craft-grid figcaption,.cap{font-size:13.5px;color:var(--mist);letter-spacing:.02em}
-@media (max-width:760px){.craft-grid{grid-template-columns:1fr}}
+/* demo + print */
+.duo{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(56px,7vw,96px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.duo.flip{grid-template-columns:1fr 1.35fr}
+.duo.flip>:first-child{order:2}
+@media (max-width:900px){.duo,.duo.flip{grid-template-columns:1fr}.duo.flip>:first-child{order:0}}
+.duo h3{font-size:clamp(28px,3.4vw,46px);font-weight:800;font-stretch:78%;line-height:1;margin-top:12px}
+.frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:620px){.frame{aspect-ratio:3/4}}
+.start{position:absolute;inset:0;width:100%;border:0;cursor:pointer;background:#000 url(img/waermepumpe-demo-poster.jpg) center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.start span{font-family:var(--mono);font-weight:500;font-size:14px;letter-spacing:.1em;text-transform:uppercase;background:var(--amber);color:var(--ink);padding:16px 24px;border-radius:999px}
+.start span::before{content:"▶  "}
+.start:hover span{background:var(--amber-2)}
 
-/* playable */
-.play{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.play ul{margin:22px 0 0;padding-left:18px;color:var(--mist);display:grid;gap:6px}
-.play ul li::marker{color:var(--ember)}
-.status{display:inline-block;margin-top:22px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);border:1px solid rgba(224,138,76,.5);padding:6px 12px}
-@media (max-width:860px){.play{grid-template-columns:1fr;gap:28px}}
-
-/* spot */
-.spot{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:56px;align-items:center}
-.spot video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:var(--ash-2);border:1px solid var(--line)}
-.price{display:flex;align-items:baseline;gap:12px;margin-top:26px;flex-wrap:wrap}
-.price b{font-family:var(--display);font-size:44px;color:var(--ember);line-height:1}
-.price span{color:var(--mist)}
-.spot .btn{margin-top:26px}
-@media (max-width:860px){
-.spot{grid-template-columns:1fr;gap:28px}.spot video{max-width:340px}}
-.demo{display:grid;gap:28px}
-.demo .frame{position:relative;width:100%;aspect-ratio:16/9;background:var(--ash-2);border:1px solid var(--line);overflow:hidden}
-.demo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.demo .start{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:url(img/waermepumpe-demo-poster.jpg) center/cover;cursor:pointer;border:0;color:var(--bone);font:inherit}
-.demo .start span{background:var(--soul);color:var(--ash);padding:13px 26px;font-weight:600;letter-spacing:.04em;font-size:15px}
-.demotxt{max-width:720px}
-@media (max-width:860px){.demo .frame{aspect-ratio:9/15}}.demotxt .btn{margin-top:26px;margin-right:12px}
-.film{max-width:880px}
-.film figure{margin:0;display:flex;flex-direction:column;gap:10px}
-.film video{display:block;width:100%;height:auto;background:var(--ash-2);border:1px solid var(--line)}
-.film .q video{aspect-ratio:16/9}
-.filmtxt{margin-top:36px;max-width:720px}.filmtxt .btn{margin-top:26px}
-
-/* parts */
-.part{padding-block:88px 0;background:linear-gradient(180deg,var(--ash-2) 0%,var(--ash) 100%);border-top:1px solid var(--line)}
-.part .head{margin-bottom:0}
-.part .num{font-family:var(--display);font-size:20px;letter-spacing:.2em;color:var(--ember)}
-.part+section,.part+.showcase{padding-top:56px}
-.warden{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center}
-.warden video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--ash-2);border:1px solid var(--line)}
-@media (max-width:860px){.warden{grid-template-columns:1fr;gap:28px}}
+/* social */
+.social{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.handles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:760px){.handles{grid-template-columns:1fr}}
+.handles a{display:flex;justify-content:space-between;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--line);border-radius:18px;padding:22px 24px;background:var(--bg);transition:border-color .15s}
+.handles a:hover{border-color:var(--amber)}
+.handles b{font-family:var(--display);font-weight:800;font-size:22px;font-stretch:85%}
+.handles span{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.handles a::after{content:"↗";color:var(--amber);font-size:20px}
 
 /* process */
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;padding:0;margin:0}
-.steps li{counter-increment:s;display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--soul);padding-top:18px}
-.steps li::before{content:"0" counter(s);font-family:var(--display);font-size:36px;color:var(--soul);line-height:1}
-.steps p{color:var(--mist)}
-@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--amber);padding-top:18px}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--mono);font-size:13px;color:var(--amber);margin-bottom:22px}
+.steps p{color:var(--mute);margin:10px 0 0;font-size:16px}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 
-/* why */
-.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
-.why div{display:flex;flex-direction:column;gap:8px}
-.why p{color:var(--mist)}
-@media (max-width:700px){.why{grid-template-columns:1fr}}
+/* VEYRMOOR teaser */
+.tease{position:relative;min-height:clamp(380px,48vw,600px);display:flex;align-items:flex-end;overflow:hidden;border-top:1px solid var(--line)}
+.tease img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(.85) brightness(.75)}
+.tease::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.05) 20%,rgba(18,17,16,.9) 88%)}
+.tease .wrap{position:relative;z-index:1;padding-bottom:clamp(40px,6vw,80px);width:100%}
+.tease .eyebrow{color:#8fbcff}
+.tease p.big{font-family:var(--display);font-weight:900;font-stretch:62%;text-transform:uppercase;font-size:clamp(52px,11vw,160px);line-height:.85;letter-spacing:-.02em;margin:12px 0 0}
+.tease .lede{color:#cfc9be}
 
 /* contact */
-.contact{position:relative;overflow:hidden;padding-block:120px}
-.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
-.contact .wrap{position:relative}
-.contact h2{font-size:clamp(40px,6vw,72px)}
-.card{margin-top:34px;display:grid;grid-template-columns:auto 1fr;gap:10px 28px;max-width:560px;background:rgba(13,15,20,.82);border:1px solid var(--line);padding:26px 28px}
-.card dt{color:var(--mist);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
-.card dd{margin:0;font-size:18px;user-select:all;overflow-wrap:anywhere}
-.card dd.plain{user-select:text}
-@media (max-width:480px){.card{grid-template-columns:1fr;gap:2px}.card dd{margin-bottom:12px}}
+.contact{background:var(--amber);color:var(--ink)}
+.contact .eyebrow{color:var(--ink)}
+.contact h2{font-size:clamp(48px,9vw,140px);font-stretch:68%;font-weight:900;line-height:.9;margin-bottom:24px}
+.contact .lede{color:#3b2f1d}
+.contact .mail{display:inline-block;margin-top:clamp(26px,3vw,40px);font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,52px);letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--ink);line-height:1.1;overflow-wrap:anywhere}
+.contact .mail:hover{opacity:.75}
+.card{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:clamp(32px,4vw,52px) 0 0;border-top:1.5px solid var(--ink);padding-top:16px}
+.card dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.card dd{margin:4px 0 0;font-weight:600}
+.card a{text-decoration:none}
+@media (max-width:760px){.card{grid-template-columns:1fr}}
 
-footer{border-top:1px solid var(--line);padding-block:44px 56px;color:var(--mist);font-size:13.5px}
-footer .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:32px}
-footer h4{font-family:var(--body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone);margin:0 0 10px}
-footer p{line-height:1.7}
+footer{background:#0b0a09;color:#a19b90;font-size:14px;padding:48px 0 calc(48px + env(safe-area-inset-bottom))}
+footer .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:40px}
+footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text);margin:0 0 10px;font-weight:500}
+footer p{margin:10px 0 0}
+footer a{color:var(--text)}
 @media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav>
+<nav class="top" aria-label="Main">
   <div class="wrap">
-    <a class="mark" href="#top">AXIOM<span>.</span>studios</a>
+    <a class="mark" href="#top">AXIOM<span>.studios</span></a>
     <ul>
-      <li><a href="#part-veyrmoor">VEYRMOOR</a></li>
-      <li><a href="#kunden">Client projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#social">Follow</a></li>
+      <li><a class="cta" href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <img src="img/hero-ozhar.jpg" alt="Ozhar, the Soul-Eater King, from the VEYRMOOR trailer">
-  <div class="wrap">
-    <p class="eyebrow">Animation · Cinematics · Games · Salzburg</p>
-    <h1>AXIOM<span>.</span>studios</h1>
-    <p class="tag">Characters, cinematics and playable game material in Unreal Engine 5, built to an AAA standard.</p>
-    <div class="row">
-      <a class="btn" href="#contact">Ask for a demo</a>
-      <a class="btn ghost" href="#part-veyrmoor">See VEYRMOOR</a>
-      <a class="btn ghost" href="#kunden">Client projects</a>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Advertising studio · Salzburg</p>
+      <h1>Ads that stop the scroll. <em>Channels that keep running.</em></h1>
+      <p class="lede">Ad spots, brand films and product videos for companies that think big. Then we post them, run your social media and automate the busywork, so your brand keeps showing up every week.</p>
+      <div class="row">
+        <a class="btn" href="#contact">Plan your campaign</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+      <div class="trust"><span><b>DE · EN · ES · TR</b> in house</span><span><b>9:16 · 4:5 · 16:9</b> for every channel</span><span><b>Your sign-off</b> at every step</span></div>
+    </div>
+    <div class="reel">
+      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot3-poster-en.jpg" aria-hidden="true"><source src="video/loop-spot3.mp4" type="video/mp4"></video><span class="label">Brand spot</span></div>
+      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot2-poster-en.jpg" aria-hidden="true"><source src="video/loop-spot2.mp4" type="video/mp4"></video><span class="label">Social ad</span></div>
     </div>
   </div>
 </header>
 
+<div class="ticker" aria-hidden="true">
+  <div>
+    <span>Ad spots</span><span>Brand films</span><span>Product videos</span><span>3D product guides</span><span>Social media management</span><span>Automation</span><span>Print &amp; flyers</span>
+    <span>Ad spots</span><span>Brand films</span><span>Product videos</span><span>3D product guides</span><span>Social media management</span><span>Automation</span><span>Print &amp; flyers</span>
+  </div>
+</div>
+
 <main>
-<section id="work">
+<section id="services">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">What we make</p>
-      <h2>Everything a game needs to be seen</h2>
+      <p class="eyebrow">What we do</p>
+      <h2>From the first frame to the hundredth post</h2>
+      <p class="lede">One studio for the content and for what happens after it: planning, posting, reporting and the automations that keep it all moving.</p>
     </div>
     <div class="services">
-      <article>
-        <h3>Characters</h3>
-        <p>From turnaround sheets to rigged, playable UE5 models. Every lead stays on-model across key art, cutscene and gameplay.</p>
+      <article class="svc feature">
+        <span class="n">01</span>
+        <h3>Ad spots &amp; brand films</h3>
+        <p>Short spots built for the feed: the hook in the first second, native German and English versions, ready in every format your channels need.</p>
+        <ul><li>Reels &amp; TikTok</li><li>YouTube</li><li>LinkedIn</li><li>Campaign imagery</li></ul>
       </article>
-      <article>
-        <h3>Cinematics &amp; trailers</h3>
-        <p>Announce trailers and cutscenes with voice, score and dubs, delivered in every format your channels need.</p>
+      <article class="svc">
+        <span class="n">02</span>
+        <h3>Product films &amp; 3D guides</h3>
+        <p>Explain a complex product in 30 seconds, then let customers explore it in an interactive 3D guide on your website, at the trade fair or in sales calls.</p>
+        <ul><li>Product video</li><li>Interactive 3D</li><li>Trade fair loops</li></ul>
       </article>
-      <article>
-        <h3>Key art &amp; pitch</h3>
-        <p>Posters, store capsules and the visual pitch package that gets a project funded, signed or wishlisted.</p>
+      <article class="svc">
+        <span class="n">03</span>
+        <h3>Social media management</h3>
+        <p>A posting plan, captions written natively in each language, posting on Instagram, TikTok, YouTube and LinkedIn, and a plain monthly report on what worked.</p>
+        <ul><li>Content plan</li><li>Captions DE/EN</li><li>Posting</li><li>Monthly report</li></ul>
+      </article>
+      <article class="svc">
+        <span class="n">04</span>
+        <h3>Automation</h3>
+        <p>Workflows that cut, caption, format and schedule content for you, and dashboards that show what is live. Less copy-paste for your team, more consistency for your brand.</p>
+        <ul><li>Content pipelines</li><li>Scheduling</li><li>Dashboards</li></ul>
       </article>
     </div>
   </div>
 </section>
 
-<section class="part" id="part-veyrmoor">
-  <div class="wrap head">
-    <p class="num">Part 1</p>
-    <p class="eyebrow">Our own game</p>
-    <h2>VEYRMOOR: Duskfall</h2>
-    <p class="lede">Our original dark-fantasy IP: trailer, characters and the playable Unreal Engine 5 vertical slice, all built in the studio.</p>
-  </div>
-</section>
-
-<section class="showcase" id="veyrmoor">
-  <div class="wrap">
-    <div class="split">
-      <img src="img/duel.jpg" alt="Ardin facing Ozhar in the VEYRMOOR trailer" loading="lazy">
-      <div>
-        <p class="eyebrow">Showcase · Original IP</p>
-        <h2 style="margin-top:14px">VEYRMOOR</h2>
-        <p class="lede" style="margin-top:18px">A dark-fantasy world built in our studio: a kingdom frozen in its last hour of dusk, the knight Ardin, and Ozhar, the Gaunt King who bound the evening into his crown and fed on his people's souls.</p>
-        <ul class="facts">
-          <li><b>Cinematic trailer</b><span>2:49 · 44 shots</span></li>
-          <li><b>Voice &amp; music</b><span>11 voiced lines · original score</span></li>
-          <li><b>Languages</b><span>English, German and Spanish audio</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="gallery">
-      <figure class="g-a"><img src="img/ardin-blade.jpg" alt="Ardin's soul blade" loading="lazy"><figcaption>Ardin · Oathblade</figcaption></figure>
-      <figure class="g-b"><img src="img/poster.jpg" alt="VEYRMOOR key art poster" loading="lazy" style="object-position:50% 20%"><figcaption>Key art · Ozhar</figcaption></figure>
-      <figure class="g-c"><img src="img/clash.jpg" alt="Ardin and Ozhar clash" loading="lazy"><figcaption>Trailer still · The clash</figcaption></figure>
-      <figure class="g-d"><img src="img/army.jpg" alt="The hollowed army under the moon" loading="lazy"><figcaption>Trailer still · The hollowed army</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="craft">
+<section id="work" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">Dev process · Character design</p>
-      <h2>On-model from sheet to screen</h2>
-      <p class="lede">Turnarounds and expressions for every lead, so each character looks the same in key art, cutscene and game.</p>
+      <p class="eyebrow">Selected work</p>
+      <h2>Made to be watched on a phone</h2>
+      <p class="lede">Studio spots and sample projects. The shops and products shown are invented examples, not clients.</p>
     </div>
-    <figure class="sheet" style="margin:0"><img src="img/ardin-turnaround.jpg" alt="Ardin, 360 degree turnaround sheet" loading="lazy"></figure>
-    <p class="cap" style="margin-top:10px">Ardin · 360° turnaround</p>
-    <div class="craft-grid">
-      <figure><div class="sheet"><img src="img/ardin-expressions.jpg" alt="Ardin expression sheet" loading="lazy"></div><figcaption>Ardin · expression sheet</figcaption></figure>
-      <figure><div class="sheet"><img src="img/nulldrei-turnaround.jpg" alt="Nulldrei turnaround sheet" loading="lazy"></div><figcaption>Nulldrei · turnaround, from our second IP <i>Nulldrei vs Velmaron</i></figcaption></figure>
+    <div class="work">
+      <article class="case" data-case>
+        <div class="phone"><video controls playsinline preload="none" poster="img/spot3-poster-en.jpg" data-en="video/spot3-en.mp4" data-de="video/spot3-de.mp4" data-poster-en="img/spot3-poster-en.jpg" data-poster-de="img/spot3-poster-de.jpg" aria-label="Spot 3, 30 seconds"><source src="video/spot3-en.mp4" type="video/mp4"></video></div>
+        <h3>Small scale. Big story.</h3>
+        <p class="meta">Brand spot · 30 s · EN + DE</p>
+        <p>Three handmade miniature shops come alive on a workbench, then the camera pulls back. If it works at twelve centimetres, imagine it at your scale.</p>
+        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
+      </article>
+      <article class="case" data-case>
+        <div class="phone"><video controls playsinline preload="none" poster="img/spot2-poster-en.jpg" data-en="video/spot2-en.mp4" data-de="video/spot2-de.mp4" data-poster-en="img/spot2-poster-en.jpg" data-poster-de="img/spot2-poster-de.jpg" aria-label="Spot 2, 19 seconds"><source src="video/spot2-en.mp4" type="video/mp4"></video></div>
+        <h3>No camera filmed this.</h3>
+        <p class="meta">Social ad · 19 s · EN + DE</p>
+        <p>One unbroken move from a phone screen into a shop window, across the Alps and into a cup. Built to stop the thumb in the first second.</p>
+        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
+      </article>
+      <article class="case" lang="de">
+        <div class="phone"><video controls playsinline preload="none" poster="img/lw8-poster-hoch.jpg" aria-label="Produktspot Wärmepumpe LW-8, 30 Sekunden"><source src="video/lw8-de-hoch.mp4" type="video/mp4"></video></div>
+        <h3 lang="en">Heat pump LW-8</h3>
+        <p class="meta" lang="en">Product film · 30 s · German</p>
+        <p lang="en">A product that needs explaining, explained in 30 seconds: from the unit in the snow to the inside of the compressor. Fictional sample product.</p>
+        <div class="row" style="margin-top:14px"><a class="btn ghost" href="https://youtube.com/shorts/9jhVYsmchxI" target="_blank" rel="noopener">Watch on YouTube</a></div>
+      </article>
     </div>
+
+    <div class="duo" id="demo">
+      <div class="frame" id="demoframe">
+        <button class="start" type="button" id="demostart" aria-label="Start the interactive 3D demo"><span>Start demo</span></button>
+      </div>
+      <div>
+        <p class="eyebrow">Live demo · Interactive 3D</p>
+        <h3>Try it yourself: the LW-8 in 3D</h3>
+        <p class="lede">Rotate, zoom, pull the exploded view apart, tap any part, or start the guided tour with narration. With a defrost simulation, parts list and a short quiz, in German and English. We build the same for your product.</p>
+        <div class="row">
+          <a class="btn" href="demo/waermepumpe/" target="_blank" rel="noopener">Open full screen</a>
+          <a class="btn ghost" href="mailto:okan@axiomstudios.at?subject=3D%20guide%20for%20my%20product">Ask about your product</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="showcase" id="playable">
-  <div class="wrap play">
-    <div>
-      <p class="eyebrow">Playable · Unreal Engine 5</p>
-      <h2 style="margin-top:14px">VEYRMOOR: Duskfall</h2>
-      <p class="lede" style="margin-top:18px">A first-person souls-like vertical slice in Unreal Engine 5, built for PC, with an Android build in progress and a Roblox phone version planned.</p>
-      <ul>
-        <li>First-person, souls-like combat: lock-on, stamina, block and parry</li>
-        <li>Ardin's longsword rises out of his hands and floats at his side to block and cast</li>
-        <li>A runed revolver in his right hand</li>
-        <li>Lysa, a pale-blue moth, guides him through the dusk</li>
-        <li>Boss fight with Ozhar</li>
-      </ul>
-      <span class="status">Boss fight in development</span>
-    </div>
-    <figure style="margin:0;display:flex;flex-direction:column;gap:10px">
-      <div class="sheet"><img src="img/ardin-abilities.jpg" alt="Ardin abilities sheet: Oathblade, Ash Step, Ember of the Fallen" loading="lazy"></div>
-      <figcaption class="cap">Ardin · abilities sheet, the basis for the moveset</figcaption>
-    </figure>
-  </div>
-<div class="wrap">
-    <div class="craft-grid">
-      <figure><div class="sheet"><img src="img/ardin-awakening.jpg" alt="Ardin on the ground, his glowing sword floating beside him" loading="lazy"></div><figcaption>Concept · The Awakening: the sword leaves his hands and floats at his side</figcaption></figure>
-      <figure><div class="sheet"><img src="img/fp-revolver.jpg" alt="First-person view: a runed revolver in the right hand firing a blue bolt" loading="lazy"></div><figcaption>Concept · First person: the runed revolver</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="warden">
-  <div class="wrap warden">
-    <video controls playsinline preload="none" poster="img/soul-warden-poster.jpg" aria-label="Soul Warden, Drehung, 5 Sekunden">
-      <source src="video/soul-warden-turn.mp4" type="video/mp4">
-    </video>
-    <div>
-      <p class="eyebrow">Character · Clip</p>
-      <h2 style="margin-top:14px">Soul Warden</h2>
-      <p class="lede" style="margin-top:18px">Ardin's transformed form, late in the game: silver-white hair, a halo of ghost skulls and an open glowing ribcage. Not the boss: that is Ozhar. 5 seconds, straight from our character pipeline.</p>
-      <div class="sheet" style="margin-top:22px"><img src="img/soul-warden-sheet.jpg" alt="Soul Warden turnaround: front, side and back, with the floating sword" loading="lazy"></div>
-      <p class="cap" style="margin-top:10px">Soul Warden · turnaround</p>
-    </div>
-  </div>
-</section>
-
-<section class="part" id="kunden">
-  <div class="wrap head">
-    <p class="num">Part 2</p>
-    <p class="eyebrow">Client projects</p>
-    <h2>Kundenprojekte</h2>
-    <p class="lede">The same craft for businesses: sample projects for local companies and manufacturers, in German. Spots, product films and interactive 3D guides.</p>
-  </div>
-</section>
-
-<section id="spot" lang="de">
-  <div class="wrap spot">
-    <video controls playsinline preload="none" poster="img/spot-poster.jpg" aria-label="Beispielspot Muster Backstube, 15 Sekunden">
-      <source src="video/muster-backstube-spot.mp4" type="video/mp4">
-    </video>
-    <div>
-      <p class="eyebrow">Beispiel · Werbespot für lokale Betriebe</p>
-      <h2 style="margin-top:14px">Muster Backstube</h2>
-      <p class="lede" style="margin-top:18px">15 Sekunden, deutsch gesprochen, fertig für Instagram, TikTok und Ihre Website. So könnte der Spot für Ihre Bäckerei, Ihr Hotel oder Ihren Hofladen aussehen.</p>
-      <a class="btn" href="mailto:okan@axiomstudios.at?subject=Test-Spot%20anfragen">Test-Spot anfragen</a>
-    </div>
-  </div>
-</section>
-
-<section id="demo" lang="de">
-  <div class="wrap demo">
-    <div class="frame" id="demoframe">
-      <button class="start" type="button" id="demostart" aria-label="Interaktive 3D-Demo starten"><span>Demo starten</span></button>
-    </div>
-    <div class="demotxt">
-      <p class="eyebrow">Live-Demo · Interaktiver 3D-Erklärer</p>
-      <h2 style="margin-top:14px">Selbst ausprobieren: Wärmepumpe LW-8 in 3D</h2>
-      <p class="lede" style="margin-top:18px">Drehen, zoomen, Explosionsansicht aufziehen, Bauteile antippen und die geführte Tour mit Sprecher starten. Dazu Simulation mit Abtauung, Teileliste, Platinenplan und ein kurzes Quiz, auf Deutsch und Englisch. Dieselbe Technik bauen wir für Ihr Produkt. Fiktives Beispielprodukt.</p>
-      <a class="btn" href="demo/waermepumpe/" target="_blank" rel="noopener">Im Vollbild öffnen</a>
-      <a class="btn ghost" href="mailto:okan@axiomstudios.at?subject=Interaktive%203D-Demo%20f%C3%BCr%20mein%20Produkt">Demo für mein Produkt anfragen</a>
-    </div>
-  </div>
-</section>
-
-<section id="produktfilm" lang="de">
-  <div class="wrap">
-    <div class="film">
-      <figure class="q">
-        <video controls playsinline preload="none" poster="img/waermepumpe-poster-quer.jpg" aria-label="Produktspot Wärmepumpe LW-8, Querformat, 30 Sekunden">
-          <source src="video/waermepumpe-spot-quer.mp4" type="video/mp4">
-        </video>
-        <figcaption class="cap">Beispiel 16:9 für Website, Messe und YouTube. Auch im Hochformat 9:16 lieferbar.</figcaption>
-      </figure>
-    </div>
-    <div class="filmtxt">
-      <p class="eyebrow">Beispiel · Produktfilm für Hersteller</p>
-      <h2 style="margin-top:14px">Wärmepumpe LW-8: 30 Sekunden, ein Produkt, alles erklärt</h2>
-      <p class="lede" style="margin-top:18px">Vom Gerät im Schnee durch das Lüftergitter ins Innere: Explosionsansicht, Teileliste, Abtauung, Platine, Verdichter und Fehlersuche. Deutsch gesprochen, mit Musik und Untertiteln, auch im Hochformat lieferbar. So macht sich ein erklärungsbedürftiges Produkt in einem Film und einem interaktiven 3D-Guide verständlich.</p>
-      <a class="btn" href="mailto:okan@axiomstudios.at?subject=Produktfilm%20anfragen">Produktfilm anfragen</a>
-    </div>
-  </div>
-</section>
-
-<section id="process">
+<section id="process" style="padding-top:0">
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">How we work</p>
       <h2>Four steps, your sign-off at each one</h2>
     </div>
     <ol class="steps">
-      <li><h3>Brief</h3><p>Your world, your style references, one call.</p></li>
-      <li><h3>Look test</h3><p>Character sheets and a style frame within days.</p></li>
-      <li><h3>Production</h3><p>Weekly reviews; every shot checked before you see it.</p></li>
-      <li><h3>Delivery</h3><p>UE5 project files, masters, and full rights to you.</p></li>
+      <li><h3>Brief</h3><p>Your goal, your audience, your channels. One call.</p></li>
+      <li><h3>Concept</h3><p>Hook, script and style frames before anything is produced.</p></li>
+      <li><h3>Production</h3><p>The spot in every format and language, checked frame by frame.</p></li>
+      <li><h3>Launch &amp; run</h3><p>Posting, reporting and automation, if you want us to keep it going.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="showcase" id="why">
+<section class="social" id="social">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">Why AXIOM</p>
-      <h2>AAA ambition, studio-sized price</h2>
+      <p class="eyebrow">Follow the studio</p>
+      <h2>See new work first</h2>
     </div>
-    <div class="why">
-      <div><h3>Cinematic quality bar</h3><p>Every frame judged against the games you play.</p></div>
-      <div><h3>Fixed prices, fast turnaround</h3><p>You know the cost before we start.</p></div>
-      <div><h3>Four languages in house</h3><p>German, English, Spanish and Turkish, for scripts and dubs.</p></div>
-      <div><h3>Close by</h3><p>Based in Salzburg; we come to you for demos.</p></div>
+    <div class="handles">
+      <a href="https://www.instagram.com/4xi0m.5tudi05/" target="_blank" rel="noopener"><div><b>Instagram</b><br><span>@4xi0m.5tudi05</span></div></a>
+      <a href="https://www.tiktok.com/@4xi0m.5tudi05" target="_blank" rel="noopener"><div><b>TikTok</b><br><span>@4xi0m.5tudi05</span></div></a>
+      <a href="https://www.youtube.com/@4xi0m.5tudi05" target="_blank" rel="noopener"><div><b>YouTube</b><br><span>@4xi0m.5tudi05</span></div></a>
     </div>
   </div>
 </section>
 
+<section class="tease" id="veyrmoor" aria-label="VEYRMOOR teaser">
+  <img src="img/hero-ozhar.jpg" alt="">
+  <div class="wrap">
+    <p class="eyebrow">In the studio · Coming later</p>
+    <p class="big">Veyrmoor</p>
+    <p class="lede">Our own dark-fantasy game in Unreal Engine 5. A kingdom frozen in its last hour of dusk. More soon.</p>
+  </div>
+</section>
+
 <section class="contact" id="contact">
-  <img src="img/hero-ozhar.jpg" alt="" aria-hidden="true">
   <div class="wrap">
     <p class="eyebrow">Next step</p>
-    <h2 style="margin-top:14px">Interested? Ask us for a demo.</h2>
+    <h2>Let's talk about your next campaign.</h2>
+    <p class="lede">Tell us what you sell and where your customers scroll. We'll come back with an idea for the hook.</p>
+    <a class="mail" href="mailto:okan@axiomstudios.at?subject=Next%20campaign">okan@axiomstudios.at</a>
     <dl class="card">
-      <dt>Contact</dt><dd class="plain">Okan Urhan, Founder &amp; Creative Director</dd>
-      <dt>Email</dt><dd><a href="mailto:okan@axiomstudios.at">okan@axiomstudios.at</a></dd>
-      <dt>Phone</dt><dd><a href="tel:+4369010702616">+43 690 10702616</a></dd>
-      <dt>Studio</dt><dd class="plain">Seekirchen am Wallersee, Salzburg, Austria</dd>
+      <div><dt>Contact</dt><dd>Okan Urhan, Founder &amp; Creative Director</dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+4369010702616">+43 690 10702616</a></dd></div>
+      <div><dt>Studio</dt><dd>Seekirchen am Wallersee, Salzburg, Austria</dd></div>
     </dl>
   </div>
 </section>
@@ -422,8 +351,8 @@ footer p{line-height:1.7}
 <footer>
   <div class="wrap">
     <div>
-      <p style="font-family:var(--display);font-size:22px;color:var(--bone);letter-spacing:.05em">AXIOM.studios</p>
-      <p>A studio of AXIOM.industries.<br>© 2026 Okan Urhan. VEYRMOOR and all characters shown are original IP of AXIOM.studios.</p>
+      <p class="mark" style="margin:0;color:var(--text)">AXIOM<span>.studios</span></p>
+      <p>A studio of AXIOM.industries.<br>© 2026 Okan Urhan. VEYRMOOR is original IP of AXIOM.studios.</p>
     </div>
     <div>
       <h4>Impressum</h4>
@@ -439,7 +368,21 @@ footer p{line-height:1.7}
   </div>
 </footer>
 <script>
-(function(){var b=document.getElementById('demostart');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/waermepumpe/';f.title='Interaktive 3D-Demo Wärmepumpe LW-8';f.setAttribute('allowfullscreen','');document.getElementById('demoframe').replaceChildren(f)})})();
+(function(){
+  var b=document.getElementById('demostart');
+  if(b)b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/waermepumpe/';f.title='Interactive 3D demo, heat pump LW-8';f.setAttribute('allowfullscreen','');document.getElementById('demoframe').replaceChildren(f)});
+  document.querySelectorAll('.lang').forEach(function(g){
+    g.addEventListener('click',function(e){
+      var btn=e.target.closest('button');if(!btn)return;var l=btn.dataset.lang;
+      g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===btn?'true':'false')});
+      var box=g.closest('[data-case]')||g.closest('.duo');
+      var v=box.querySelector('video[data-en]');
+      if(v){v.pause();v.poster=v.dataset['poster'+(l==='de'?'De':'En')];v.querySelector('source').src=v.dataset[l];v.load()}
+      var im=box.querySelector('img[data-en]');if(im)im.src=im.dataset[l];
+    });
+  });
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
+})();
 </script>
 </body>
 </html>
