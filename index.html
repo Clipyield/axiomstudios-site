@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -56,7 +56,12 @@ section{padding:clamp(72px,10vw,140px) 0}
 .top li a:hover{color:var(--text)}
 .top .cta{color:var(--ink);background:var(--amber);padding:9px 14px;border-radius:999px}
 .top .cta:hover{color:var(--ink);background:var(--amber-2)}
-@media (max-width:820px){.top li:not(:last-child){display:none}}
+@media (max-width:820px){.top li:not(.keep){display:none}.top ul{gap:10px}}
+html[data-lang="en"] .de,html[data-lang="de"] .en{display:none!important}
+.langs{display:inline-flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px}
+.langs button{font:500 11px/1 var(--mono);letter-spacing:.1em;background:none;color:var(--mute);border:0;border-radius:999px;padding:7px 10px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--text);color:var(--ink)}
+.start b{font-weight:500}
 
 /* hero */
 .hero{padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,110px);position:relative;overflow:hidden}
@@ -66,8 +71,6 @@ section{padding:clamp(72px,10vw,140px) 0}
 .hero h1{font-size:clamp(48px,8.4vw,128px);font-weight:900;font-stretch:72%;line-height:.88;letter-spacing:-.03em;margin-top:18px}
 .hero h1 em{font-style:normal;color:var(--amber)}
 .hero .lede{font-size:clamp(18px,1.7vw,22px);color:#cfc9be}
-.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
-.trust b{color:var(--text);font-weight:500}
 .reel{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 .reel .phone:nth-child(2){margin-top:56px}
 @media (max-width:900px){.reel{max-width:520px}}
@@ -103,9 +106,6 @@ section{padding:clamp(72px,10vw,140px) 0}
 .case h3{margin-top:18px;font-size:24px;font-weight:800;font-stretch:85%}
 .case .meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:8px}
 .case p{color:var(--mute);margin:10px 0 0;font-size:16px}
-.lang{display:inline-flex;gap:4px;margin-top:14px;border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang button{font:500 11px/1 var(--mono);letter-spacing:.1em;background:none;color:var(--mute);border:0;border-radius:999px;padding:7px 11px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--text);color:var(--ink)}
 
 /* demo + print */
 .duo{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(56px,7vw,96px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
@@ -174,11 +174,12 @@ footer a{color:var(--text)}
   <div class="wrap">
     <a class="mark" href="#top">AXIOM<span>.studios</span></a>
     <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#social">Follow</a></li>
-      <li><a class="cta" href="#contact">Contact</a></li>
+      <li><a href="#services"><span class="en">Services</span><span class="de">Leistungen</span></a></li>
+      <li><a href="#work"><span class="en">Work</span><span class="de">Arbeiten</span></a></li>
+      <li><a href="#process"><span class="en">Process</span><span class="de">Ablauf</span></a></li>
+      <li><a href="#social"><span class="en">Follow</span><span class="de">Folgen</span></a></li>
+      <li class="keep"><div class="langs" role="group" aria-label="Language / Sprache"><button type="button" data-set-lang="de" aria-pressed="false">DE</button><button type="button" data-set-lang="en" aria-pressed="true">EN</button></div></li>
+      <li class="keep"><a class="cta" href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
     </ul>
   </div>
 </nav>
@@ -186,26 +187,31 @@ footer a{color:var(--text)}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Advertising studio · Salzburg</p>
-      <h1>Ads that stop the scroll. <em>Channels that keep running.</em></h1>
-      <p class="lede">Ad spots, brand films and product videos for companies that think big. Then we post them, run your social media and automate the busywork, so your brand keeps showing up every week.</p>
+      <p class="eyebrow"><span class="en">Advertising studio · Salzburg</span><span class="de">Werbestudio · Salzburg</span></p>
+      <h1 class="en">Ads that stop the scroll. <em>Channels that keep running.</em></h1>
+      <h1 class="de">Werbung, bei der man hängen bleibt. <em>Kanäle, die nie stillstehen.</em></h1>
+      <p class="lede en">Ad spots, brand films and product videos for companies that think big. Then we post them, run your social media and automate the busywork, so your brand keeps showing up every week.</p>
+      <p class="lede de">Werbespots, Imagefilme und Produktvideos für Unternehmen mit großen Plänen. Danach übernehmen wir das Posten, betreuen Ihre Social-Media-Kanäle und automatisieren die Routinearbeit, damit Ihre Marke jede Woche präsent ist.</p>
       <div class="row">
-        <a class="btn" href="#contact">Plan your campaign</a>
-        <a class="btn ghost" href="#work">See the work</a>
+        <a class="btn" href="#contact"><span class="en">Plan your campaign</span><span class="de">Kampagne planen</span></a>
+        <a class="btn ghost" href="#work"><span class="en">See the work</span><span class="de">Arbeiten ansehen</span></a>
       </div>
-      <div class="trust"><span><b>DE · EN · ES · TR</b> in house</span><span><b>9:16 · 4:5 · 16:9</b> for every channel</span><span><b>Your sign-off</b> at every step</span></div>
     </div>
     <div class="reel">
-      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot3-poster-en.jpg" aria-hidden="true"><source src="video/loop-spot3.mp4" type="video/mp4"></video><span class="label">Brand spot</span></div>
-      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot2-poster-en.jpg" aria-hidden="true"><source src="video/loop-spot2.mp4" type="video/mp4"></video><span class="label">Social ad</span></div>
+      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot3-poster-en.jpg" aria-hidden="true" data-swap data-en="video/loop-spot3.mp4" data-de="video/loop-spot3-de.mp4" data-poster-en="img/spot3-poster-en.jpg" data-poster-de="img/spot3-poster-de.jpg"><source src="video/loop-spot3.mp4" type="video/mp4"></video><span class="label"><span class="en">Brand spot</span><span class="de">Imagespot</span></span></div>
+      <div class="phone"><video autoplay muted loop playsinline preload="auto" poster="img/spot2-poster-en.jpg" aria-hidden="true" data-swap data-en="video/loop-spot2.mp4" data-de="video/loop-spot2-de.mp4" data-poster-en="img/spot2-poster-en.jpg" data-poster-de="img/spot2-poster-de.jpg"><source src="video/loop-spot2.mp4" type="video/mp4"></video><span class="label"><span class="en">Social ad</span><span class="de">Social Ad</span></span></div>
     </div>
   </div>
 </header>
 
 <div class="ticker" aria-hidden="true">
-  <div>
+  <div class="en">
     <span>Ad spots</span><span>Brand films</span><span>Product videos</span><span>3D product guides</span><span>Social media management</span><span>Automation</span><span>Print &amp; flyers</span>
     <span>Ad spots</span><span>Brand films</span><span>Product videos</span><span>3D product guides</span><span>Social media management</span><span>Automation</span><span>Print &amp; flyers</span>
+  </div>
+  <div class="de">
+    <span>Werbespots</span><span>Imagefilme</span><span>Produktvideos</span><span>3D-Produktguides</span><span>Social-Media-Betreuung</span><span>Automatisierung</span><span>Print &amp; Flyer</span>
+    <span>Werbespots</span><span>Imagefilme</span><span>Produktvideos</span><span>3D-Produktguides</span><span>Social-Media-Betreuung</span><span>Automatisierung</span><span>Print &amp; Flyer</span>
   </div>
 </div>
 
@@ -213,34 +219,40 @@ footer a{color:var(--text)}
 <section id="services">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">What we do</p>
-      <h2>From the first frame to the hundredth post</h2>
-      <p class="lede">One studio for the content and for what happens after it: planning, posting, reporting and the automations that keep it all moving.</p>
+      <p class="eyebrow"><span class="en">What we do</span><span class="de">Was wir machen</span></p>
+      <h2 class="en">From the first frame to the hundredth post</h2>
+      <h2 class="de">Vom ersten Bild bis zum hundertsten Post</h2>
+      <p class="lede en">One studio for the content and for what happens after it: planning, posting, reporting and the automations that keep it all moving.</p>
+      <p class="lede de">Ein Studio für den Inhalt und für alles, was danach kommt: Planung, Posting, Auswertung und die Automatisierungen, die alles am Laufen halten.</p>
     </div>
     <div class="services">
       <article class="svc feature">
         <span class="n">01</span>
-        <h3>Ad spots &amp; brand films</h3>
-        <p>Short spots built for the feed: the hook in the first second, native German and English versions, ready in every format your channels need.</p>
-        <ul><li>Reels &amp; TikTok</li><li>YouTube</li><li>LinkedIn</li><li>Campaign imagery</li></ul>
+        <h3 class="en">Ad spots &amp; brand films</h3><h3 class="de">Werbespots &amp; Imagefilme</h3>
+        <p class="en">Short spots built for the feed: the hook in the first second, written natively for each market and delivered in every format your channels need.</p>
+        <p class="de">Kurze Spots, gemacht für den Feed: der Hook in der ersten Sekunde, für jeden Markt in der eigenen Sprache geschrieben und in jedem Format, das Ihre Kanäle brauchen.</p>
+        <ul><li>Reels &amp; TikTok</li><li>YouTube</li><li>LinkedIn</li><li><span class="en">Campaign imagery</span><span class="de">Kampagnenbilder</span></li></ul>
       </article>
       <article class="svc">
         <span class="n">02</span>
-        <h3>Product films &amp; 3D guides</h3>
-        <p>Explain a complex product in 30 seconds, then let customers explore it in an interactive 3D guide on your website, at the trade fair or in sales calls.</p>
-        <ul><li>Product video</li><li>Interactive 3D</li><li>Trade fair loops</li></ul>
+        <h3 class="en">Product films &amp; 3D guides</h3><h3 class="de">Produktfilme &amp; 3D-Guides</h3>
+        <p class="en">Explain a complex product in 30 seconds, then let customers explore it in an interactive 3D guide on your website, at the trade fair or in sales calls.</p>
+        <p class="de">Ein erklärungsbedürftiges Produkt in 30 Sekunden verständlich gemacht. Danach erkunden Kunden es selbst im interaktiven 3D-Guide, auf Ihrer Website, auf der Messe oder im Verkaufsgespräch.</p>
+        <ul><li><span class="en">Product video</span><span class="de">Produktvideo</span></li><li><span class="en">Interactive 3D</span><span class="de">Interaktives 3D</span></li><li><span class="en">Trade fair loops</span><span class="de">Messe-Loops</span></li></ul>
       </article>
       <article class="svc">
         <span class="n">03</span>
-        <h3>Social media management</h3>
-        <p>A posting plan, captions written natively in each language, posting on Instagram, TikTok, YouTube and LinkedIn, and a plain monthly report on what worked.</p>
-        <ul><li>Content plan</li><li>Captions DE/EN</li><li>Posting</li><li>Monthly report</li></ul>
+        <h3 class="en">Social media management</h3><h3 class="de">Social-Media-Betreuung</h3>
+        <p class="en">A posting plan, captions written natively for every market, posting on Instagram, TikTok, YouTube and LinkedIn, and a plain monthly report on what worked.</p>
+        <p class="de">Ein Redaktionsplan, Texte, die in jeder Sprache natürlich klingen, Posting auf Instagram, TikTok, YouTube und LinkedIn und ein verständlicher Monatsbericht, was funktioniert hat.</p>
+        <ul><li><span class="en">Content plan</span><span class="de">Redaktionsplan</span></li><li><span class="en">Captions</span><span class="de">Texte</span></li><li>Posting</li><li><span class="en">Monthly report</span><span class="de">Monatsbericht</span></li></ul>
       </article>
       <article class="svc">
         <span class="n">04</span>
-        <h3>Automation</h3>
-        <p>Workflows that cut, caption, format and schedule content for you, and dashboards that show what is live. Less copy-paste for your team, more consistency for your brand.</p>
-        <ul><li>Content pipelines</li><li>Scheduling</li><li>Dashboards</li></ul>
+        <h3 class="en">Automation</h3><h3 class="de">Automatisierung</h3>
+        <p class="en">Workflows that cut, caption, format and schedule content for you, and dashboards that show what is live. Less copy-paste for your team, more consistency for your brand.</p>
+        <p class="de">Abläufe, die Inhalte für Sie schneiden, untertiteln, formatieren und einplanen, dazu Dashboards, die zeigen, was gerade läuft. Weniger Copy-Paste für Ihr Team, mehr Beständigkeit für Ihre Marke.</p>
+        <ul><li><span class="en">Content pipelines</span><span class="de">Content-Pipelines</span></li><li><span class="en">Scheduling</span><span class="de">Planung</span></li><li>Dashboards</li></ul>
       </article>
     </div>
   </div>
@@ -249,63 +261,69 @@ footer a{color:var(--text)}
 <section id="work" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">Selected work</p>
-      <h2>Made to be watched on a phone</h2>
-      <p class="lede">Studio spots and sample projects. The shops and products shown are invented examples, not clients.</p>
+      <p class="eyebrow"><span class="en">Selected work</span><span class="de">Ausgewählte Arbeiten</span></p>
+      <h2 class="en">Made to be watched on a phone</h2>
+      <h2 class="de">Gemacht für den Blick aufs Handy</h2>
+      <p class="lede en">Studio spots and sample projects. The shops and products shown are invented examples, not clients.</p>
+      <p class="lede de">Studio-Spots und Beispielprojekte. Die gezeigten Geschäfte und Produkte sind erfunden und keine Kunden.</p>
     </div>
     <div class="work">
-      <article class="case" data-case>
-        <div class="phone"><video controls playsinline preload="none" poster="img/spot3-poster-en.jpg" data-en="video/spot3-en.mp4" data-de="video/spot3-de.mp4" data-poster-en="img/spot3-poster-en.jpg" data-poster-de="img/spot3-poster-de.jpg" aria-label="Spot 3, 30 seconds"><source src="video/spot3-en.mp4" type="video/mp4"></video></div>
-        <h3>Small scale. Big story.</h3>
-        <p class="meta">Brand spot · 30 s · EN + DE</p>
-        <p>Three handmade miniature shops come alive on a workbench, then the camera pulls back. If it works at twelve centimetres, imagine it at your scale.</p>
-        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
+      <article class="case">
+        <div class="phone"><video controls playsinline preload="none" poster="img/spot3-poster-en.jpg" data-swap data-en="video/spot3-en.mp4" data-de="video/spot3-de.mp4" data-poster-en="img/spot3-poster-en.jpg" data-poster-de="img/spot3-poster-de.jpg" aria-label="Spot 3"><source src="video/spot3-en.mp4" type="video/mp4"></video></div>
+        <h3 class="en">Small scale. Big story.</h3><h3 class="de">Klein, aber oho.</h3>
+        <p class="meta"><span class="en">Brand spot · 30 s</span><span class="de">Imagespot · 30 s</span></p>
+        <p class="en">Three handmade miniature shops come alive on a workbench, then the camera pulls back. If it works at twelve centimetres, imagine it at your scale.</p>
+        <p class="de">Drei handgemachte Miniaturläden erwachen auf der Werkbank zum Leben, dann fährt die Kamera zurück. Wenn das mit zwölf Zentimetern funktioniert, stellen Sie sich Ihr Unternehmen vor.</p>
       </article>
-      <article class="case" data-case>
-        <div class="phone"><video controls playsinline preload="none" poster="img/spot2-poster-en.jpg" data-en="video/spot2-en.mp4" data-de="video/spot2-de.mp4" data-poster-en="img/spot2-poster-en.jpg" data-poster-de="img/spot2-poster-de.jpg" aria-label="Spot 2, 19 seconds"><source src="video/spot2-en.mp4" type="video/mp4"></video></div>
-        <h3>No camera filmed this.</h3>
-        <p class="meta">Social ad · 19 s · EN + DE</p>
-        <p>One unbroken move from a phone screen into a shop window, across the Alps and into a cup. Built to stop the thumb in the first second.</p>
-        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
+      <article class="case">
+        <div class="phone"><video controls playsinline preload="none" poster="img/spot2-poster-en.jpg" data-swap data-en="video/spot2-en.mp4" data-de="video/spot2-de.mp4" data-poster-en="img/spot2-poster-en.jpg" data-poster-de="img/spot2-poster-de.jpg" aria-label="Spot 2"><source src="video/spot2-en.mp4" type="video/mp4"></video></div>
+        <h3 class="en">No camera filmed this.</h3><h3 class="de">Keine Kamera hat das gefilmt.</h3>
+        <p class="meta"><span class="en">Social ad · 19 s</span><span class="de">Social Ad · 19 s</span></p>
+        <p class="en">One unbroken move from a phone screen into a shop window, across the Alps and into a cup. Built to stop the thumb in the first second.</p>
+        <p class="de">Eine einzige Kamerafahrt vom Handydisplay ins Schaufenster, über die Alpen und hinein in die Tasse. Gebaut, um den Daumen in der ersten Sekunde zu stoppen.</p>
       </article>
-      <article class="case" lang="de">
-        <div class="phone"><video controls playsinline preload="none" poster="img/lw8-poster-hoch.jpg" aria-label="Produktspot Wärmepumpe LW-8, 30 Sekunden"><source src="video/lw8-de-hoch.mp4" type="video/mp4"></video></div>
-        <h3 lang="en">Heat pump LW-8</h3>
-        <p class="meta" lang="en">Product film · 30 s · German</p>
-        <p lang="en">A product that needs explaining, explained in 30 seconds: from the unit in the snow to the inside of the compressor. Fictional sample product.</p>
-        <div class="row" style="margin-top:14px"><a class="btn ghost" href="https://youtube.com/shorts/9jhVYsmchxI" target="_blank" rel="noopener">Watch on YouTube</a></div>
+      <article class="case">
+        <div class="phone"><video controls playsinline preload="none" poster="img/lw8-poster-hoch.jpg" aria-label="LW-8"><source src="video/lw8-de-hoch.mp4" type="video/mp4"></video></div>
+        <h3 class="en">Heat pump LW-8</h3><h3 class="de">Wärmepumpe LW-8</h3>
+        <p class="meta"><span class="en">Product film · 30 s</span><span class="de">Produktfilm · 30 s</span></p>
+        <p class="en">A product that needs explaining, explained in 30 seconds: from the unit in the snow to the inside of the compressor. Fictional sample product.</p>
+        <p class="de">Ein erklärungsbedürftiges Produkt, in 30 Sekunden erklärt: vom Gerät im Schnee bis ins Innere des Verdichters. Fiktives Beispielprodukt.</p>
+        <div class="row" style="margin-top:14px"><a class="btn ghost" href="https://youtube.com/shorts/9jhVYsmchxI" target="_blank" rel="noopener"><span class="en">Watch on YouTube</span><span class="de">Auf YouTube ansehen</span></a></div>
       </article>
     </div>
 
     <div class="duo" id="demo">
       <div class="frame" id="demoframe">
-        <button class="start" type="button" id="demostart" aria-label="Start the interactive 3D demo"><span>Start demo</span></button>
+        <button class="start" type="button" id="demostart"><span><b class="en">Start demo</b><b class="de">Demo starten</b></span></button>
       </div>
       <div>
-        <p class="eyebrow">Live demo · Interactive 3D</p>
-        <h3>Try it yourself: the LW-8 in 3D</h3>
-        <p class="lede">Rotate, zoom, pull the exploded view apart, tap any part, or start the guided tour with narration. With a defrost simulation, parts list and a short quiz, in German and English. We build the same for your product.</p>
+        <p class="eyebrow"><span class="en">Live demo · Interactive 3D</span><span class="de">Live-Demo · Interaktives 3D</span></p>
+        <h3 class="en">Try it yourself: the LW-8 in 3D</h3>
+        <h3 class="de">Selbst ausprobieren: die LW-8 in 3D</h3>
+        <p class="lede en">Rotate, zoom, pull the exploded view apart, tap any part, or start the guided tour with narration. With a defrost simulation, parts list and a short quiz. We build the same for your product.</p>
+        <p class="lede de">Drehen, zoomen, die Explosionsansicht aufziehen, Bauteile antippen oder die geführte Tour mit Sprecher starten. Dazu eine Abtau-Simulation, Teileliste und ein kurzes Quiz. Dasselbe bauen wir für Ihr Produkt.</p>
         <div class="row">
-          <a class="btn" href="demo/waermepumpe/" target="_blank" rel="noopener">Open full screen</a>
-          <a class="btn ghost" href="mailto:okan@axiomstudios.at?subject=3D%20guide%20for%20my%20product">Ask about your product</a>
+          <a class="btn" id="demofull" href="demo/waermepumpe/?lang=en" target="_blank" rel="noopener"><span class="en">Open full screen</span><span class="de">Im Vollbild öffnen</span></a>
+          <a class="btn ghost en" href="mailto:okan@axiomstudios.at?subject=3D%20guide%20for%20my%20product">Ask about your product</a>
+          <a class="btn ghost de" href="mailto:okan@axiomstudios.at?subject=3D-Guide%20f%C3%BCr%20mein%20Produkt">Für Ihr Produkt anfragen</a>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <section id="process" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">How we work</p>
-      <h2>Four steps, your sign-off at each one</h2>
+      <p class="eyebrow"><span class="en">How we work</span><span class="de">So arbeiten wir</span></p>
+      <h2 class="en">From brief to launch in four steps</h2>
+      <h2 class="de">In vier Schritten vom Briefing zum Start</h2>
     </div>
     <ol class="steps">
-      <li><h3>Brief</h3><p>Your goal, your audience, your channels. One call.</p></li>
-      <li><h3>Concept</h3><p>Hook, script and style frames before anything is produced.</p></li>
-      <li><h3>Production</h3><p>The spot in every format and language, checked frame by frame.</p></li>
-      <li><h3>Launch &amp; run</h3><p>Posting, reporting and automation, if you want us to keep it going.</p></li>
+      <li><h3>Briefing</h3><p class="en">Your goal, your audience, your channels. One call.</p><p class="de">Ihr Ziel, Ihre Zielgruppe, Ihre Kanäle. Ein Gespräch.</p></li>
+      <li><h3 class="en">Concept</h3><h3 class="de">Konzept</h3><p class="en">Hook, script and style frames before anything is produced.</p><p class="de">Hook, Skript und Look stehen, bevor produziert wird.</p></li>
+      <li><h3 class="en">Production</h3><h3 class="de">Produktion</h3><p class="en">The spot in every format and language you need, checked frame by frame.</p><p class="de">Der Spot in jedem Format und jeder Sprache, die Sie brauchen, Bild für Bild geprüft.</p></li>
+      <li><h3 class="en">Launch &amp; run</h3><h3 class="de">Start &amp; Betrieb</h3><p class="en">Posting, reporting and automation, if you want us to keep it going.</p><p class="de">Posting, Auswertung und Automatisierung, wenn wir es für Sie weiterführen sollen.</p></li>
     </ol>
   </div>
 </section>
@@ -313,8 +331,9 @@ footer a{color:var(--text)}
 <section class="social" id="social">
   <div class="wrap">
     <div class="head">
-      <p class="eyebrow">Follow the studio</p>
-      <h2>See new work first</h2>
+      <p class="eyebrow"><span class="en">Follow the studio</span><span class="de">Dem Studio folgen</span></p>
+      <h2 class="en">See new work first</h2>
+      <h2 class="de">Neue Arbeiten zuerst sehen</h2>
     </div>
     <div class="handles">
       <a href="https://www.instagram.com/4xi0m.5tudi05/" target="_blank" rel="noopener"><div><b>Instagram</b><br><span>@4xi0m.5tudi05</span></div></a>
@@ -324,25 +343,29 @@ footer a{color:var(--text)}
   </div>
 </section>
 
-<section class="tease" id="veyrmoor" aria-label="VEYRMOOR teaser">
+<section class="tease" id="veyrmoor" aria-label="VEYRMOOR">
   <img src="img/hero-ozhar.jpg" alt="">
   <div class="wrap">
-    <p class="eyebrow">In the studio · Coming later</p>
+    <p class="eyebrow"><span class="en">In the studio · Coming later</span><span class="de">Im Studio · Demnächst</span></p>
     <p class="big">Veyrmoor</p>
-    <p class="lede">Our own dark-fantasy game in Unreal Engine 5. A kingdom frozen in its last hour of dusk. More soon.</p>
+    <p class="lede en">Our own dark-fantasy game in Unreal Engine 5. A kingdom frozen in its last hour of dusk. More soon.</p>
+    <p class="lede de">Unser eigenes Dark-Fantasy-Spiel in Unreal Engine 5. Ein Königreich, erstarrt in seiner letzten Abendstunde. Bald mehr.</p>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow">Next step</p>
-    <h2>Let's talk about your next campaign.</h2>
-    <p class="lede">Tell us what you sell and where your customers scroll. We'll come back with an idea for the hook.</p>
-    <a class="mail" href="mailto:okan@axiomstudios.at?subject=Next%20campaign">okan@axiomstudios.at</a>
+    <p class="eyebrow"><span class="en">Next step</span><span class="de">Nächster Schritt</span></p>
+    <h2 class="en">Let's talk about your next campaign.</h2>
+    <h2 class="de">Sprechen wir über Ihre nächste Kampagne.</h2>
+    <p class="lede en">Tell us what you sell and where your customers scroll. We'll come back with an idea for the hook.</p>
+    <p class="lede de">Erzählen Sie uns, was Sie verkaufen und wo Ihre Kunden scrollen. Wir melden uns mit einer Idee für den Hook.</p>
+    <a class="mail en" href="mailto:okan@axiomstudios.at?subject=Next%20campaign">okan@axiomstudios.at</a>
+    <a class="mail de" href="mailto:okan@axiomstudios.at?subject=N%C3%A4chste%20Kampagne">okan@axiomstudios.at</a>
     <dl class="card">
-      <div><dt>Contact</dt><dd>Okan Urhan, Founder &amp; Creative Director</dd></div>
-      <div><dt>Phone</dt><dd><a href="tel:+4369010702616">+43 690 10702616</a></dd></div>
-      <div><dt>Studio</dt><dd>Seekirchen am Wallersee, Salzburg, Austria</dd></div>
+      <div><dt><span class="en">Contact</span><span class="de">Kontakt</span></dt><dd>Okan Urhan, Founder &amp; Creative Director</dd></div>
+      <div><dt><span class="en">Phone</span><span class="de">Telefon</span></dt><dd><a href="tel:+4369010702616">+43 690 10702616</a></dd></div>
+      <div><dt>Studio</dt><dd><span class="en">Seekirchen am Wallersee, Salzburg, Austria</span><span class="de">Seekirchen am Wallersee, Salzburg, Österreich</span></dd></div>
     </dl>
   </div>
 </section>
@@ -352,7 +375,7 @@ footer a{color:var(--text)}
   <div class="wrap">
     <div>
       <p class="mark" style="margin:0;color:var(--text)">AXIOM<span>.studios</span></p>
-      <p>A studio of AXIOM.industries.<br>© 2026 Okan Urhan. VEYRMOOR is original IP of AXIOM.studios.</p>
+      <p><span class="en">A studio of AXIOM.industries.</span><span class="de">Ein Studio von AXIOM.industries.</span><br>© 2026 Okan Urhan. <span class="en">VEYRMOOR is original IP of AXIOM.studios.</span><span class="de">VEYRMOOR ist eine eigene Marke von AXIOM.studios.</span></p>
     </div>
     <div>
       <h4>Impressum</h4>
@@ -369,18 +392,26 @@ footer a{color:var(--text)}
 </footer>
 <script>
 (function(){
-  var b=document.getElementById('demostart');
-  if(b)b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/waermepumpe/';f.title='Interactive 3D demo, heat pump LW-8';f.setAttribute('allowfullscreen','');document.getElementById('demoframe').replaceChildren(f)});
-  document.querySelectorAll('.lang').forEach(function(g){
-    g.addEventListener('click',function(e){
-      var btn=e.target.closest('button');if(!btn)return;var l=btn.dataset.lang;
-      g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===btn?'true':'false')});
-      var box=g.closest('[data-case]')||g.closest('.duo');
-      var v=box.querySelector('video[data-en]');
-      if(v){v.pause();v.poster=v.dataset['poster'+(l==='de'?'De':'En')];v.querySelector('source').src=v.dataset[l];v.load()}
-      var im=box.querySelector('img[data-en]');if(im)im.src=im.dataset[l];
+  var root=document.documentElement,KEY='axiom-lang';
+  function cur(){return root.getAttribute('data-lang')==='de'?'de':'en'}
+  function frame(){return document.querySelector('#demoframe iframe')}
+  function setLang(l,save){
+    root.setAttribute('data-lang',l);root.lang=l;
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.setLang===l?'true':'false')});
+    document.querySelectorAll('video[data-swap]').forEach(function(v){
+      var p=v.dataset[l==='de'?'posterDe':'posterEn'];if(p)v.poster=p;
+      var src=v.dataset[l];if(src){var s=v.querySelector('source');if(s.getAttribute('src')!==src){v.pause();s.src=src;v.load();if(v.autoplay)v.play().catch(function(){})}}
     });
-  });
+    var full=document.getElementById('demofull');if(full)full.href='demo/waermepumpe/?lang='+l;
+    var f=frame();try{if(f&&f.contentWindow.__demo)f.contentWindow.__demo.setLang(l)}catch(e){}
+    if(save){try{localStorage.setItem(KEY,l)}catch(e){}}
+  }
+  var start=null;try{start=localStorage.getItem(KEY)}catch(e){}
+  if(start!=='de'&&start!=='en'){var nl=(navigator.languages&&navigator.languages[0])||navigator.language||'en';start=/^de/i.test(nl)?'de':'en'}
+  setLang(start,false);
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.setLang,true)})});
+  var b=document.getElementById('demostart');
+  if(b)b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='demo/waermepumpe/?lang='+cur();f.title='LW-8 3D';f.setAttribute('allowfullscreen','');document.getElementById('demoframe').replaceChildren(f)});
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause()})}
 })();
 </script>
