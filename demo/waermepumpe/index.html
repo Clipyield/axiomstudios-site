@@ -942,6 +942,7 @@ function update(dt){
   if(S.level)L0.forEach(o=>{o.visible=false});
   if(!window.__skip)renderer.render(scene,camera);
 }
+{const q=new URLSearchParams(location.search).get('lang');if(q==='en'||q==='de')S.lang=q}
 applyLang();go(0);requestAnimationFrame(frame);
 setTimeout(()=>{$('hint').style.opacity=0},6000);
 // hooks for capture tooling
