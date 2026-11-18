@@ -1,0 +1,11 @@
+{
+  "name": "AXIOM.lexis",
+  "short_name": "Lexis",
+  "description": "Learn Chinese, translate live, and see what to say back.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#121110",
+  "theme_color": "#121110",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

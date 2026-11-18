@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Lexis glasses view</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #000; color: #7CFFB2; font-family: system-ui, sans-serif; }
+  body { display: flex; flex-direction: column; justify-content: center; gap: 4vh; padding: 6vh 6vw; box-sizing: border-box; }
+  .k { font-size: 3.2vh; letter-spacing: .1em; text-transform: uppercase; opacity: .6; margin: 0; }
+  .meaning { font-size: 6vh; line-height: 1.15; margin: 0; color: #fff; }
+  .heard { font-size: 3.6vh; margin: 0; opacity: .7; }
+  .say { font-size: 8vh; font-weight: 700; line-height: 1.1; margin: 0; }
+  .zh { font-size: 4vh; margin: 0; opacity: .8; }
+  body.mirror { transform: scaleX(-1); }
+  .hint { position: fixed; bottom: 8px; left: 0; right: 0; text-align: center; font-size: 12px; opacity: .35; color: #fff; }
+</style>
+</head>
+<body>
+  <div><p class="k">They said</p><p class="meaning" id="meaning">—</p><p class="heard" id="heard"></p></div>
+  <div><p class="k">You say</p><p class="say" id="say">—</p><p class="zh" id="zh"></p></div>
+  <p class="hint">Double-tap to mirror (for reflective displays)</p>
+<script>
+  const $ = (id) => document.getElementById(id);
+  function show(d) {
+    if (!d) return;
+    if ('meaning' in d || 'heard' in d) { $('meaning').textContent = d.meaning || '…'; $('heard').textContent = d.heard || ''; }
+    if (d.reply) { $('say').textContent = d.reply.say || '—'; $('zh').textContent = d.reply.zh || ''; }
+  }
+  try { show(JSON.parse(localStorage.getItem('lexis.hud') || 'null')); } catch (e) {}
+  if ('BroadcastChannel' in window) new BroadcastChannel('lexis-hud').onmessage = (e) => show(e.data);
+  addEventListener('storage', (e) => { if (e.key === 'lexis.hud') try { show(JSON.parse(e.newValue)); } catch (x) {} });
+  addEventListener('dblclick', () => document.body.classList.toggle('mirror'));
+  if (navigator.wakeLock) navigator.wakeLock.request('screen').catch(() => {});
+</script>
+</body>
+</html>
